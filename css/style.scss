@@ -1,0 +1,57 @@
+/* Imports */
+@use "./variables/fonts";
+@use "./variables/colours";
+
+html,
+body {
+    background-color: colours.$bg0;
+    color: colours.$light0;
+    font: fonts.$oxygen
+}
+
+nav#navigation {
+    padding-top: 20px;
+
+    ul {
+        position: absolute;
+        right: 0;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 5vw;
+            font-size: 1.75rem;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            text-decoration-thickness: 2px;
+
+            &.navitem {
+                font-family: fonts.$staatliches;
+
+                transition: all 0.3s;
+
+
+                &:hover {
+                    color: colours.$light2;
+                    transform: translateY(10px);
+                    text-decoration-color: colours.$light2;
+                }
+            }
+        }
+    }
+}
+
+div#content {
+    width: 75%;
+    margin: auto
+}
+
+div#footer {
+    font-family: fonts.$oxygen-mono;
+    color: colours.$light1;
+    width: 100vw;
+    text-align: center;
+}
