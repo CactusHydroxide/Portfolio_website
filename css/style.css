@@ -1,16 +1,74 @@
-@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Oxygen:wght@300;400;700&family=Staatliches&display=swap"); /* SCSS HEX */ /* Imports */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Oxygen+Mono&family=Staatliches&display=swap"); /* SCSS HEX */ /* Glitch effect */
+@keyframes glitch-effect {
+  0% {
+    top: 5px;
+    left: 5px;
+  }
+  20% {
+    top: -3px;
+    left: -4px;
+  }
+  40% {
+    top: 2px;
+    left: 4px;
+  }
+  50% {
+    top: -1px;
+    left: -3px;
+  }
+  60% {
+    top: 2px;
+    left: 3px;
+  }
+  100% {
+    top: -5px;
+    left: -1px;
+  }
+}
+@keyframes glitch-effect-opp {
+  0% {
+    top: -5px;
+    left: -5px;
+  }
+  20% {
+    top: 3px;
+    left: 4px;
+  }
+  40% {
+    top: -2px;
+    left: -4px;
+  }
+  50% {
+    top: 1px;
+    left: 3px;
+  }
+  60% {
+    top: -2px;
+    left: -3px;
+  }
+  100% {
+    top: 5px;
+    left: 1px;
+  }
+}
+/* Imports */
+/* Variables */
+/* Styles */
 html,
 body {
   background-color: #090923;
-  color: #bfb3b9;
-  font: "Oxygen", sans-serif;
+  color: #ffe7f3;
+  font-family: "DM Sans", sans-serif;
 }
 
 nav#navigation {
-  padding-top: 20px;
+  position: sticky;
+  top: 0;
+  padding-top: 30px;
 }
 nav#navigation ul {
-  position: absolute;
+  display: flex;
+  justify-content: flex-end;
   right: 0;
   list-style-type: none;
   margin: 0;
@@ -33,6 +91,77 @@ nav#navigation ul li.navitem:hover {
   color: #ad6285;
   transform: translateY(10px);
   text-decoration-color: #ad6285;
+}
+
+div#banner {
+  width: 75%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+div#banner #banner-left {
+  margin: auto 0;
+  width: 60%;
+}
+div#banner #banner-left #intro {
+  font-family: "Oxygen Mono", monospace;
+  font-size: 1.5rem;
+  color: #727292;
+  margin: 0;
+}
+div#banner #banner-left #name-container {
+  font-family: "Staatliches", cursive;
+  font-size: 6rem;
+  color: #ad6285;
+  position: relative;
+  margin: 10px 0;
+}
+div#banner #banner-left #name-container:hover > .glitch:nth-of-type(1) {
+  animation: glitch-effect 0.75s infinite steps(4);
+}
+div#banner #banner-left #name-container:hover > .glitch:nth-of-type(2) {
+  animation: glitch-effect-opp 0.75s infinite steps(4);
+}
+div#banner #banner-left #name-container .name {
+  margin: 0;
+  position: relative;
+}
+div#banner #banner-left #name-container .name.glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+div#banner #banner-left #name-container .name.glitch:nth-of-type(1) {
+  color: #2097df;
+}
+div#banner #banner-left #name-container .name.glitch:nth-of-type(2) {
+  color: #df2097;
+}
+div#banner #banner-left #icons-container {
+  display: flex;
+  stroke: #727292;
+}
+div#banner #banner-left #icons-container .icons {
+  cursor: pointer;
+  margin-right: 15px;
+}
+div#banner #banner-left #icons-container .icons:hover {
+  stroke: #bd7b99;
+}
+div#banner #banner-right {
+  cursor: pointer;
+}
+div#banner #banner-right #banner-img {
+  transition: -webkit-clip-path 0.3s ease-out;
+  transition: clip-path 0.3s ease-out;
+  transition: clip-path 0.3s ease-out, -webkit-clip-path 0.3s ease-out;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+div#banner #banner-right #banner-img:hover {
+  -webkit-clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
 }
 
 div#content {
