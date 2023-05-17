@@ -10,8 +10,13 @@ $content-width: 75%;
 html,
 body {
 	background-color: colours.$bg0;
-	color: colours.$light0;
+	color: colours.$primary0;
 	font-family: fonts.$dm-sans;
+
+	p {
+		line-height: 1.25;
+	}
+
 }
 
 nav#navigation {
@@ -19,6 +24,8 @@ nav#navigation {
 	z-index: 10;
 	top: 0;
 	padding-top: 30px;
+	position: absolute;
+	right: 0;
 
 	ul {
 		display: flex;
@@ -43,9 +50,9 @@ nav#navigation {
 				transition: all 0.3s;
 
 				&:hover {
-					color: colours.$light2;
-					transform: translateY(10px);
-					text-decoration-color: colours.$light2;
+					color: colours.$primary2;
+					transform: translateY(-3px);
+					text-decoration-color: colours.$primary2;
 				}
 			}
 		}
@@ -55,8 +62,9 @@ nav#navigation {
 div#banner {
 	width: $content-width;
 	margin: auto;
-	margin-top: 50px;
+	height: 100vh;
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 
 	#banner-left {
@@ -66,14 +74,14 @@ div#banner {
 		#intro {
 			font-family: fonts.$oxygen-mono;
 			font-size: 1.5rem;
-			color: colours.$fadedbg;
+			color: colours.$secondary;
 			margin: 0;
 		}
 
 		#name-container {
 			font-family: fonts.$staatliches;
 			font-size: 6rem;
-			color: colours.$light2;
+			color: colours.$primary2;
 			position: relative;
 			margin: 10px 0;
 
@@ -107,16 +115,24 @@ div#banner {
 			}
 		}
 
+		#subtitle {
+			font-family: fonts.$staatliches;
+			color: colours.$secondary;
+			font-size: 1.5rem;
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+
 		#icons-container {
 			display: flex;
-			stroke: colours.$fadedbg;
+			stroke: colours.$secondary;
 
 			.icons {
 				cursor: pointer;
 				margin-right: 15px;
 
 				&:hover {
-					stroke: colours.$light1;
+					stroke: colours.$primary1;
 				}
 			}
 		}
@@ -158,11 +174,21 @@ div#banner {
 div#content {
 	width: $content-width;
 	margin: auto;
+
+	#aboutme {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-evenly;
+
+		div {
+			max-width: 45%;
+		}
+	}
 }
 
 div#footer {
 	font-family: fonts.$oxygen-mono;
-	color: colours.$light1;
+	color: colours.$primary1;
 	width: 100vw;
 	text-align: center;
 }

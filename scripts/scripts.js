@@ -16,4 +16,4 @@ var mailIcon = document.getElementsByClassName('mail-icon');
 buttonOnClick(githubIcon, 'https://github.com/CactusHydroxide');
 buttonOnClick(linkedinIcon, 'https://www.linkedin.com/in/clement-loy-539584269/');
 buttonOnClick(youtubeIcon, 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-buttonOnClick(mailIcon, 'lol');
+buttonOnClick(mailIcon, 'mailto:clementloyme@gmail.com');
