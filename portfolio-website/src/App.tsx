@@ -17,11 +17,11 @@ function App() {
           /* Application Components */
           <>
             <NavBar />
-            <div style={{ height: 'calc(2*100vh)' }}            >
+            <div style={{ height: 'calc(2*100vh)' }}>
               testing
             </div>
             <Footer />
-          </ >
+          </>
       }
     </>
   )

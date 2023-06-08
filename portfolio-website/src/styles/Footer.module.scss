@@ -1,7 +1,8 @@
-@import './colours.scss';
+@import './variables.scss';
+
 .footerContainer{
     background-color: $bgLight;
-    width:100vw;
+    width:100%;
 
     p {
         margin:auto; 

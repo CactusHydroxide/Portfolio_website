@@ -1,4 +1,4 @@
-@import './colours.scss';
+@import './variables.scss';
 
 .container {
     width: 100%;
@@ -12,10 +12,12 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width:100%;
 
         h1 {
             color: $primary0;
             margin-bottom: 0px;
+            width: 100%;
         }
 
         p {
@@ -41,7 +43,7 @@
     }
 
     100% {
-        opacity: 0;
+        opacity: 1;
         display: none;
     }
 }

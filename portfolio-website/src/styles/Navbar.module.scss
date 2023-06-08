@@ -1,12 +1,11 @@
-@import './colours.scss';
-@import './fonts.scss';
+@import './variables.scss';
 
 $navHeight: 50px;
 
 .navbarContainer {
     background-color: $bgLight;
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     box-shadow: 5px 0px 10px $bgShadow;
     height: $navHeight;
