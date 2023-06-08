@@ -1,0 +1,60 @@
+@import './colours.scss';
+@import './fonts.scss';
+
+$navHeight: 50px;
+
+.navbarContainer {
+    background-color: $bgLight;
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    box-shadow: 5px 0px 10px $bgShadow;
+    height: $navHeight;
+    transition: top 0.2s ease-in;
+    position: fixed;
+    top: calc(0px - $navHeight);
+
+    &.show {
+        top: 0;
+    }
+
+    * {
+        margin: auto 0;
+    }
+
+    .logo {
+        width: 20%;
+        visibility: hidden;
+        //hidden for now till we handle the logo
+    }
+
+    ul {
+        font-family: $staatliches;
+        font-size: 1.5em;
+        margin: 0;
+        width: 60%;
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+
+        li {
+            position: relative;
+
+            p {
+                color: $primary0;
+                text-decoration: underline;
+                text-decoration-color: #ffffff00;
+                transition: 0.3s all;
+
+                &:hover {
+                    color: $primary1;
+                    transform: scale(105%);
+                    text-decoration-thickness: 2px;
+                    text-decoration-color: $primary1;
+                    // text-underline-offset: 3px;
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import './colours.scss';
+.footerContainer{
+    background-color: $bgLight;
+    width:100vw;
+
+    p {
+        margin:auto; 
+        text-align: center;
+    }
+}

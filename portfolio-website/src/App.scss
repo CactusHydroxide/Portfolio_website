@@ -1,0 +1,11 @@
+@import './styles/colours.scss';
+@import './styles/fonts.scss';
+
+body {
+  background-color: $bg;
+  color: $primary0;
+  font-family: $dm-sans;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+}
