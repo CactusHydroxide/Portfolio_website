@@ -1,7 +1,10 @@
 @import './variables.scss';
 
 $navHeight: 48px;
+// TODO: Adjust max height
+$navMaxHeight: calc((36px + 12px) * 5);
 $contentHeight: 36px;
+$navSideMargin: 25px;
 
 .navbarContainer {
     background-color: $bgLight;
@@ -17,6 +20,16 @@ $contentHeight: 36px;
     justify-content: space-between;
     align-items: center;
 
+
+    @media (max-width: $medium) {
+        align-items: start;
+        transition: all 0.3s;
+
+        &.showCollapsedItem {
+            height: $navMaxHeight
+        }
+    }
+
     &.show {
         top: 0;
     }
@@ -29,27 +42,30 @@ $contentHeight: 36px;
         height: $contentHeight;
         line-height: $contentHeight;
         min-width: 150px;
-        margin-left: 25px;
-
-
+        // margin-left: $navSideMargin;
+        margin: 6px 0 6px $navSideMargin
     }
 
     ul {
-        height: $contentHeight;
+        text-align: right;
+        // height: $contentHeight;
         display: flex;
         justify-content: space-between;
         list-style-type: none;
 
+        @media (max-width: $medium) {
+            display: block;
+        }
+
         li {
-            height: 100%;
+            height: $contentHeight;
             font-size: 1.5em;
             color: $primary0;
-            margin-right: 40px;
             font-family: $staatliches;
             transition: all 0.3s;
 
             &:last-of-type {
-                margin-right: 25px;
+                margin-right: $navSideMargin;
             }
 
 
@@ -69,19 +85,28 @@ $contentHeight: 36px;
                 height: 100%;
                 text-align: center;
                 font-size: 24px;
-                margin: auto;
+                margin-top: 6px;
 
             }
 
             @media (max-width: $medium) {
                 &:not(:first-of-type) {
+
+                    // TODO: transform y value for falldown effect
                     display: none;
+                    margin-top: 12px;
+                }
+
+                &.showCollapsedItem {
+                    display: block;
                 }
 
                 .navListIcon {
                     display: inline;
                     cursor: pointer;
                 }
+
+                margin-right: $navSideMargin;
             }
         }
     }
