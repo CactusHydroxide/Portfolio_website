@@ -1,11 +1,11 @@
 @import './variables.scss';
 
-$navHeight: 50px;
+$navHeight: 48px;
+$contentHeight: 36px;
 
 .navbarContainer {
     background-color: $bgLight;
-    display: flex;
-    width: 100%;
+    width: 100vw;
     justify-content: space-between;
     box-shadow: 5px 0px 10px $bgShadow;
     height: $navHeight;
@@ -13,45 +13,74 @@ $navHeight: 50px;
     position: fixed;
     top: calc(0px - $navHeight);
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     &.show {
         top: 0;
     }
 
     * {
-        margin: auto 0;
+        margin: 0
     }
 
     .logo {
-        width: 20%;
-        visibility: hidden;
-        //hidden for now till we handle the logo
+        height: $contentHeight;
+        line-height: $contentHeight;
+        min-width: 150px;
+        margin-left: 25px;
+
+
     }
 
     ul {
-        font-family: $staatliches;
-        font-size: 1.5em;
-        margin: 0;
-        width: 60%;
+        height: $contentHeight;
         display: flex;
-        justify-content: space-evenly;
-        list-style: none;
+        justify-content: space-between;
+        list-style-type: none;
 
         li {
-            position: relative;
+            height: 100%;
+            font-size: 1.5em;
+            color: $primary0;
+            margin-right: 40px;
+            font-family: $staatliches;
+            transition: all 0.3s;
 
-            p {
-                color: $primary0;
-                text-decoration: underline;
-                text-decoration-color: #ffffff00;
-                transition: 0.3s all;
+            &:last-of-type {
+                margin-right: 25px;
+            }
 
-                &:hover {
-                    color: $primary1;
-                    transform: scale(105%);
-                    text-decoration-thickness: 2px;
-                    text-decoration-color: $primary1;
-                    // text-underline-offset: 3px;
 
+            * {
+                margin: 0;
+                line-height: $contentHeight;
+            }
+
+            &:hover {
+                color: $primary1;
+                transform: scale(105%);
+
+            }
+
+            .navListIcon {
+                display: none;
+                height: 100%;
+                text-align: center;
+                font-size: 24px;
+                margin: auto;
+
+            }
+
+            @media (max-width: $medium) {
+                &:not(:first-of-type) {
+                    display: none;
+                }
+
+                .navListIcon {
+                    display: inline;
+                    cursor: pointer;
                 }
             }
         }

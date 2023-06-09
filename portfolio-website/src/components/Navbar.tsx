@@ -1,5 +1,6 @@
 import { useEffect, FC, useState } from 'react'
 import styles from '../styles/Navbar.module.scss'
+import { GoListUnordered } from 'react-icons/go'
 
 const NavBar: FC = () => {
     const [navInView, setNavInView] = useState<boolean>(false)
@@ -26,6 +27,9 @@ const NavBar: FC = () => {
                 <h3>Clement Loy</h3>
             </div>
             <ul className={styles.nav}>
+                <li>
+                    <GoListUnordered className={styles.navListIcon} />
+                </li>
                 <li>
                     <p>About</p>
                 </li>
