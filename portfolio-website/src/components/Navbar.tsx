@@ -43,7 +43,7 @@ const NavBar: FC = () => {
             <div className={styles.logo}>
                 <h3>Clement Loy</h3>
             </div>
-            <ul className={`${styles.na
+            <ul className={`${styles.nav}`}>
                 <li
                     onTouchStart={touchHandling}
                 >
