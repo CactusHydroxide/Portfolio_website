@@ -1,0 +1,63 @@
+@import './variables.scss';
+$bannerEffectDisplacement: 25px;
+
+#bannerContainer {
+    height: 100vh;
+    padding: 0 $contentPadding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bannerImgContainer {
+    position: relative;
+    width: 40%;
+    height:200px;
+    // TODO: Set width to height after image 
+    // height: width;
+    margin: $bannerEffectDisplacement;
+
+
+    .bannerImgBlock {
+        width: 100%;
+        height: 100%;
+        border-radius: 5%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &.bannerBg1 {
+            background-color: $bgLight2;
+            box-shadow: 5px 0px 10px $bgShadow;
+            transform: translate(calc(-1* $bannerEffectDisplacement), calc(-1* $bannerEffectDisplacement));
+        }
+
+        &.bannerBg2 {
+            background-color: $bgLight;
+            box-shadow: 5px 0px 10px $bgShadow;
+        }
+
+        &.bannerImg {
+            // TODO: handle image
+            background-color: red;
+            transform: translate($bannerEffectDisplacement, $bannerEffectDisplacement);
+        }
+    }
+}
+
+#bannerContent {
+    width: 45%;
+    font-size: 1.5em;
+
+    *{
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: $primary0;
+        margin-bottom: 15px;
+        line-height: 1em;
+        font-family: $staatliches;
+    }
+}

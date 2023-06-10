@@ -11,7 +11,8 @@ $royal-blue-traditional: #08246cff;
 
 // Palette
 $bg: #090923;
-$bgLight: #131335;
+$bgLight: #1d1d4b;
+$bgLight2: #131335;
 $bgShadow: #06061b;
 $primary0: #ffe7f3;
 $primary1: #e485b6;
@@ -22,4 +23,7 @@ $secondary1: #4c4c74;
 $small: 576px;
 $medium: 758px;
 $large: 992px;
-$largest: 1200px
+$largest: 1200px;
+
+//* Layout *//
+$contentPadding: 25px; // TODO: Change padding dynamically?

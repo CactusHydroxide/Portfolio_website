@@ -8,6 +8,7 @@ $navMaxHeight: calc($navItemHeight * 5);
 $navSideMargin: 25px;
 
 .navbarContainer {
+    z-index: 100;
     background-color: $bgLight;
     width: 100vw;
     justify-content: space-between;

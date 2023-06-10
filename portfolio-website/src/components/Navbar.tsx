@@ -62,6 +62,21 @@ const NavBar: FC = () => {
                     <p>Contact</p>
                 </li>
             </ul>
+
+
+
+
+            {/* ! DEBUGGING ONLY */}
+            <button
+                onClick={() => setNavInView(false)}
+                style={{
+                    position: 'fixed',
+                    bottom: '150px',
+                    right: '150px'
+                }}
+            >
+                hideNav
+            </button>
         </div >
     )
 }

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.scss'
 import InitialLoad from './components/InitialLoad'
 import NavBar from './components/Navbar'
+import Banner from './components/Banner'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
@@ -17,9 +19,12 @@ function App() {
           /* Application Components */
           <>
             <NavBar />
-            <div style={{ height: 'calc(2*100vh)' }}>
-              testing
-            </div>
+            <Banner />
+
+            <p>About</p>
+            <p>Skillset</p>
+            <p>Experience</p>
+            <Contact />
             <Footer />
           </>
       }
