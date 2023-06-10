@@ -13,7 +13,7 @@ const Contact: FC = () => {
             <div id={styles.contactRight}>
                 <div id={styles.squareRatio}></div>
                 <div id={styles.squareContent}>
-                    <h3>Socials</h3>
+                    <h2>Socials</h2>
                     <ul>
                         <li>
                             <FaGithub />
