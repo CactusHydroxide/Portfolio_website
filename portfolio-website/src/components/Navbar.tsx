@@ -18,9 +18,23 @@ const NavBar: FC = () => {
 
     useEffect(() => {
         // update navInView based of scroll direction
-        currentTop > prevTop ? setNavInView(false) : setNavInView(true)
+        if (currentTop > prevTop) {
+            setNavInView(false)
+            setNavCollapse(true)
+        }
+        else { setNavInView(true) }
         setPrevTop(currentTop)
     }, [currentTop])
+
+    const touchHandling: React.TouchEventHandler = (e) => {
+        let moduleStyleName = styles.touch
+        const el = e.currentTarget as HTMLElement
+        el.classList.add(moduleStyleName)
+
+        el.addEventListener('touchend', () => {
+            el.classList.remove(moduleStyleName)
+        })
+    }
 
     let showCollapsedClassName = `${!navCollapse && styles.showCollapsedItem}`
 
@@ -29,8 +43,10 @@ const NavBar: FC = () => {
             <div className={styles.logo}>
                 <h3>Clement Loy</h3>
             </div>
-            <ul className={`${styles.nav}`}>
-                <li>
+            <ul className={`${styles.na
+                <li
+                    onTouchStart={touchHandling}
+                >
                     <GoListUnordered className={styles.navListIcon} onClick={() => { setNavCollapse(current => !current) }} />
                 </li>
                 <li className={showCollapsedClassName}>
