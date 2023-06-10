@@ -60,6 +60,7 @@ $navSideMargin: 25px;
         }
 
         li {
+            cursor:pointer;
             height: $contentHeight;
             font-size: 1.5em;
             color: $primary0;
