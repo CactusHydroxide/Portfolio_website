@@ -67,7 +67,7 @@ const NavBar: FC = () => {
 
 
             {/* ! DEBUGGING ONLY */}
-            <button
+            {/* <button
                 onClick={() => setNavInView(false)}
                 style={{
                     position: 'fixed',
@@ -76,7 +76,7 @@ const NavBar: FC = () => {
                 }}
             >
                 hideNav
-            </button>
+            </button> */}
         </div >
     )
 }
