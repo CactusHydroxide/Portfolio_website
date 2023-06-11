@@ -10,7 +10,7 @@ $navSideMargin: 25px;
 .navbarContainer {
     z-index: 100;
     background-color: $bgLight;
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     box-shadow: 5px 0px 10px $bgShadow;
     height: $navHeight;
@@ -23,6 +23,10 @@ $navSideMargin: 25px;
     align-items: center;
 
 
+    @media (min-width: $largest) {
+        width: $largest;
+        
+    }
     @media (max-width: $medium) {
         align-items: start;
         transition: all 0.3s;
