@@ -8,6 +8,11 @@ const NavBar: FC = () => {
     const [prevTop, setPrevTop] = useState<number>(0)
     const [currentTop, setCurrentTop] = useState<number>(0)
 
+    /*
+        * Initial Render
+        * Sets navstate to true for initial slide in
+        * Adds scroll event listener to document
+    */
     useEffect(() => {
         setNavInView(true)
         document.addEventListener('scroll', () => {
@@ -16,8 +21,8 @@ const NavBar: FC = () => {
         })
     }, [])
 
+    // * Update navInView based of scroll direction
     useEffect(() => {
-        // update navInView based of scroll direction
         if (currentTop > prevTop) {
             setNavInView(false)
             setNavCollapse(true)
@@ -44,9 +49,7 @@ const NavBar: FC = () => {
                 <h3>Clement Loy</h3>
             </div>
             <ul className={`${styles.nav}`}>
-                <li
-                    onTouchStart={touchHandling}
-                >
+                <li onTouchStart={touchHandling}>
                     <GoListUnordered className={styles.navListIcon} onClick={() => { setNavCollapse(current => !current) }} />
                 </li>
                 <li className={showCollapsedClassName}>

@@ -1,6 +1,5 @@
 @import './variables.scss';
 $bannerEffectDisplacement: 25px;
-$animationDuration: 0.3s;
 
 @keyframes fadeIn {
     from {
@@ -51,7 +50,6 @@ $animationDuration: 0.3s;
     opacity: 0;
     animation: $animationDuration ease-out $animationDuration fadeIn forwards;
 
-
     .square {
         margin-top: 100%;
     }
@@ -72,11 +70,11 @@ $animationDuration: 0.3s;
         &.bannerBg2 {
             background-color: $bgLight;
             box-shadow: 5px 0px 10px $bgShadow;
-            animation: $animationDuration ease-out calc($animationDuration * 2) imageLayerMiddle forwards;
+            animation: $animationDuration ease-out $animationDuration imageLayerMiddle forwards;
         }
 
         &.bannerImg {
-            animation: $animationDuration ease-out calc($animationDuration * 2) imageLayerTop forwards;
+            animation: $animationDuration ease-out $animationDuration imageLayerTop forwards;
             background-color: red;
 
             img {
@@ -95,6 +93,12 @@ $animationDuration: 0.3s;
 #bannerContent {
     width: 45%;
     font-size: 1.5em;
+    opacity: 0;
+    transform: translate(calc(-1* $bannerEffectDisplacement), calc(-1* $bannerEffectDisplacement));
+    animation: $animationDuration fadeIn, $animationDuration imageLayerMiddle;
+    animation-delay: calc($animationDuration*2);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 
     * {
         margin: 0;
