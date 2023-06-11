@@ -1,5 +1,37 @@
 @import './variables.scss';
 $bannerEffectDisplacement: 25px;
+$animationDuration: 0.3s;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes imageLayerMiddle {
+    from {
+        transform: translate(calc(-1* $bannerEffectDisplacement), calc(-1* $bannerEffectDisplacement));
+    }
+
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes imageLayerTop {
+    from {
+        transform: translate(calc(-1* $bannerEffectDisplacement), calc(-1* $bannerEffectDisplacement));
+    }
+
+    to {
+        transform: translate(calc($bannerEffectDisplacement), calc($bannerEffectDisplacement));
+
+    }
+}
 
 #bannerContainer {
     height: 100vh;
@@ -12,35 +44,50 @@ $bannerEffectDisplacement: 25px;
 #bannerImgContainer {
     position: relative;
     width: 40%;
-    height:200px;
+    // height: auto;
     // TODO: Set width to height after image 
     // height: width;
     margin: $bannerEffectDisplacement;
+    opacity: 0;
+    animation: $animationDuration ease-out $animationDuration fadeIn forwards;
 
+
+    .square {
+        margin-top: 100%;
+    }
 
     .bannerImgBlock {
         width: 100%;
-        height: 100%;
         border-radius: 5%;
         position: absolute;
         top: 0;
         left: 0;
+        transform: translate(calc(-1* $bannerEffectDisplacement), calc(-1* $bannerEffectDisplacement));
 
         &.bannerBg1 {
             background-color: $bgLight2;
             box-shadow: 5px 0px 10px $bgShadow;
-            transform: translate(calc(-1* $bannerEffectDisplacement), calc(-1* $bannerEffectDisplacement));
         }
 
         &.bannerBg2 {
             background-color: $bgLight;
             box-shadow: 5px 0px 10px $bgShadow;
+            animation: $animationDuration ease-out calc($animationDuration * 2) imageLayerMiddle forwards;
         }
 
         &.bannerImg {
-            // TODO: handle image
+            animation: $animationDuration ease-out calc($animationDuration * 2) imageLayerTop forwards;
             background-color: red;
-            transform: translate($bannerEffectDisplacement, $bannerEffectDisplacement);
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 5%;
+                height: 100%;
+                width: 100%;
+
+            }
         }
     }
 }
@@ -49,8 +96,12 @@ $bannerEffectDisplacement: 25px;
     width: 45%;
     font-size: 1.5em;
 
-    *{
+    * {
         margin: 0;
+    }
+
+    span {
+        font-family: $oxygen-mono;
     }
 
     h1 {
