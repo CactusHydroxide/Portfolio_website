@@ -1,5 +1,6 @@
 @import './variables.scss';
-$bannerEffectDisplacement: 25px;
+$bannerEffectDisplacement: 5%;
+$mobilePadding: 125px;
 
 @keyframes fadeIn {
     from {
@@ -38,6 +39,18 @@ $bannerEffectDisplacement: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.5em;
+
+
+    @media (max-width:$medium) {
+        font-size: 1.25em;
+    }
+
+    @media (max-width:$small) {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
 }
 
 #bannerImgContainer {
@@ -49,6 +62,10 @@ $bannerEffectDisplacement: 25px;
     margin: $bannerEffectDisplacement;
     opacity: 0;
     animation: $animationDuration ease-out $animationDuration fadeIn forwards;
+
+    @media (max-width:$small) {
+        width: 60%;
+    }
 
     .square {
         margin-top: 100%;
@@ -92,13 +109,17 @@ $bannerEffectDisplacement: 25px;
 
 #bannerContent {
     width: 45%;
-    font-size: 1.5em;
     opacity: 0;
     transform: translate(calc(-1* $bannerEffectDisplacement), calc(-1* $bannerEffectDisplacement));
     animation: $animationDuration fadeIn, $animationDuration imageLayerMiddle;
     animation-delay: calc($animationDuration*2);
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
+
+    @media (max-width:$small) {
+        width: 80%;
+        text-align: center;
+    }
 
     * {
         margin: 0;

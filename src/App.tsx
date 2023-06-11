@@ -19,14 +19,16 @@ function App() {
           /* Application Components */
           <>
             <NavBar />
-            <Banner />
-
-            <p>About</p>
-            <p>Skillset</p>
-            <p>Experience</p>
-            <Contact />
+            <div id='contentConatiner'>
+              <Banner />
+              <p>About</p>
+              <p>Skillset</p>
+              <p>Experience</p>
+              <Contact />
+            </div>
             <Footer />
           </>
+
       }
     </>
   )

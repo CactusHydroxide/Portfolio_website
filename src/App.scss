@@ -8,5 +8,11 @@ body {
   font-weight: 400;
   margin: 0;
   max-width: $largest;
-  margin:auto;
+  margin: auto;
+
+  #contentConatiner {
+    > * {
+      margin-bottom: 50px;
+    }
+  }
 }
