@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.scss'
 import InitialLoad from './components/InitialLoad'
 import NavBar from './components/Navbar'
@@ -7,7 +7,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  let [initRender, setInitRender] = useState<boolean>(true)
+  const [initRender, setInitRender] = useState<boolean>(true)
+  const containerRef = useRef() as React.MutableRefObject<HTMLDivElement>
 
   return (
     <>
@@ -19,14 +20,16 @@ function App() {
           /* Application Components */
           <>
             <NavBar />
-            <div id='contentConatiner'>
+            <div id='contentConatiner'
+              ref={containerRef}
+            >
               <Banner />
               <p>About</p>
               <p>Skillset</p>
               <p>Experience</p>
-              <Contact />
+              <Contact containerRef={containerRef} />
+              <Footer />
             </div>
-            <Footer />
           </>
 
       }

@@ -17,6 +17,15 @@
 #contactLeft {
     width: 55%;
     margin: 0 $contentPadding;
+    opacity: 0;
+    opacity: 0;
+    transform: translate(-5px, -5px);
+    transition: all ease-in-out $animationDuration ;
+
+    &.inView {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 
     @media (max-width: $small) {
         margin: auto;
@@ -57,6 +66,14 @@
     display: inline-block;
     width: 30%;
     max-width: 400px;
+    opacity: 0;
+    transform: translate(-5px, -5px);
+    transition: all ease-in-out $animationDuration $animationDuration;
+
+    &.inView {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 
     @media (max-width: $small) {
         margin: auto;
@@ -94,11 +111,11 @@
 
             &:hover {
                 color: $primary1;
-                transform: translateX(15px);
+                padding-left: 15px;
                 font-size: 1.15em;
 
                 @media (max-width: $small) {
-                    transform: translateX(0px);
+                    padding-left: 0;
                 }
             }
         }

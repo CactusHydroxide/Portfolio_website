@@ -11,8 +11,28 @@ body {
   margin: auto;
 
   #contentConatiner {
-    > * {
+
+    overflow-y: scroll;
+    height: 100vh;
+
+    >* {
       margin-bottom: 50px;
+      position: relative;
+    }
+
+    $loaderHeight: 50px;
+
+    .fadeInTrigger {
+      height: $loaderHeight ;
+      width: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: -1;
+    }
+
+    #footer {
+      margin-bottom: 0;
     }
   }
 }

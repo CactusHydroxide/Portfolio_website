@@ -15,8 +15,10 @@ const NavBar: FC = () => {
     */
     useEffect(() => {
         setNavInView(true)
-        document.addEventListener('scroll', () => {
-            setCurrentTop(document.documentElement.scrollTop)
+        const contentCotainer = document.getElementById('contentConatiner') as HTMLDivElement
+
+        contentCotainer.addEventListener('scroll', () => {
+            setCurrentTop(contentCotainer.scrollTop)
             setTimeout(() => { }, 500)
         })
     }, [])
